@@ -82,21 +82,21 @@ public class Cuatro_en_ralla {
 		boolean error = false;
 
 		while (i < tablero[columna].length && contadorColumna < 4 && !error) {
-			if (tablero[fila][i] == jugador){
+			if (tablero[fila][columna] == jugador){
 				contadorColumna++;
 			}
 			else{error = true;}
 			i++;
 		}
 		while (j < tablero.length && contadorColumna < 4 && !error) {
-			if (tablero[fila][i] == jugador){
+			if (tablero[fila][columna] == jugador){
 				contadorFila++;
 			}
 			else{error = true;}
 			j++;
 		}
 		while (j > 0 && contadorColumna < 4 && !error) {
-			if (tablero[fila][i] == jugador){
+			if (tablero[fila][columna] == jugador){
 				contadorFila++;
 			}
 			else{error = true;}
