@@ -58,7 +58,7 @@ public class Tablero {
 
 			int cabe = coche.getCasillas() + y;
 
-			if (cabe > META_FILA || y < 0)
+			if (cabe > META_COLUMNA || y < 0)
 				throw new TableroException("Error, no se puede colocar ahí.");
 
 			for (int i = 0; i < cabe; i++) {
