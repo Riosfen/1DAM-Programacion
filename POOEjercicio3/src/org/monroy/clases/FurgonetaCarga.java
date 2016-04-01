@@ -6,10 +6,9 @@ public class FurgonetaCarga extends Vehiculo {
 	
 	private double pesoMaxAutorizado;
 	
-	public FurgonetaCarga (String matricula, GamaVehiculo gamaVehiculo, TipoCombustible tipoCombustible, double pesoMaxAutorizado){
-		super(gamaVehiculo, tipoCombustible);
+	public FurgonetaCarga (String matricula, GamaVehiculo gamaVehiculo, double pesoMaxAutorizado){
+		super(gamaVehiculo, matricula);
 		this.pesoMaxAutorizado = pesoMaxAutorizado;
-		this.matricula = matricula;
 		//TODO Formatear matricula si me regañan.
 		
 	}
@@ -18,7 +17,7 @@ public class FurgonetaCarga extends Vehiculo {
 		
 		double importePeso = ANIADIDO * pesoMaxAutorizado;
 		
-		return this.precioBase + this.combustible + importePeso;
+		return this.precioBase + importePeso;
 	}
 
 }

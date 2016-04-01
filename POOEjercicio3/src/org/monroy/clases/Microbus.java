@@ -6,10 +6,9 @@ public class Microbus extends Vehiculo {
 	
 	private int numPlaza;
 	
-	public Microbus (String matricula, GamaVehiculo gamaVehiculo, TipoCombustible tipoCombustible, int numPlaza){
-		super(gamaVehiculo, tipoCombustible);
+	public Microbus (String matricula, GamaVehiculo gamaVehiculo, int numPlaza){
+		super(gamaVehiculo, matricula);
 		this.numPlaza = numPlaza;
-		this.matricula = matricula;
 		//TODO Formatear matricula si me regañan.
 		
 	}
@@ -18,7 +17,7 @@ public double calcularPrecio() {
 		
 		double importePlaza = numPlaza * ANIADIDO;
 		
-		return this.precioBase + this.combustible + importePlaza;
+		return this.precioBase + importePlaza;
 	}
 
 }
