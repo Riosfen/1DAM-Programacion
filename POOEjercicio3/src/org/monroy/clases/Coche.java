@@ -29,7 +29,7 @@ public class Coche extends Vehiculo {
 			break;
 		}
 		
-		return this.precioBase + this.precioCombustible;
+		return precioBase() + this.precioCombustible;
 	}
 
 	

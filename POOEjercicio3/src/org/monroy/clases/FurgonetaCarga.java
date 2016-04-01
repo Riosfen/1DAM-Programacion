@@ -17,7 +17,7 @@ public class FurgonetaCarga extends Vehiculo {
 		
 		double importePeso = ANIADIDO * pesoMaxAutorizado;
 		
-		return this.precioBase + importePeso;
+		return precioBase() + importePeso;
 	}
 
 }

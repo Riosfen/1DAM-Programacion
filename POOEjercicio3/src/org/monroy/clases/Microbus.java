@@ -17,7 +17,7 @@ public double calcularPrecio() {
 		
 		double importePlaza = numPlaza * ANIADIDO;
 		
-		return this.precioBase + importePlaza;
+		return precioBase() + importePlaza;
 	}
 
 }
