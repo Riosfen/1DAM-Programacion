@@ -1,7 +1,5 @@
 package Utilidades;
 
-import org.monroy.clases.MatriculaException;
-
 public class Matricula {
 
 	private String matricula;
