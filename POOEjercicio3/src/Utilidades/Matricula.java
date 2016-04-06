@@ -54,5 +54,16 @@ public class Matricula {
 		return matricula;
 		
 	}
+	
+	public boolean equals(Matricula otro){
+		
+		boolean resultado = false;
+		
+		if (matricula.equals(otro)){
+			resultado = true;
+		}
+		
+		return resultado;
+	}
 
 }
