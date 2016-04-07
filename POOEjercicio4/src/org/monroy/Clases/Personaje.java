@@ -54,7 +54,7 @@ public abstract class Personaje {
 		return inteligencia;
 	}
 	
-	public void setNombre(String nombre){
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	

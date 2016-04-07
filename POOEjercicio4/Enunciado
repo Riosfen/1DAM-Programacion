@@ -1,0 +1,24 @@
+Ejercicio 5
+
+Sobre el ejercicio anterior , realizar un programa principal con el siguiente menú: 
+
+1.Alta de personaje: Se solicitará si desea crear un clérigo o un mago.
+	Se solicitarán los datos correspondientes y se creará 
+
+2.Mago aprende hechizo: Se solicitará el nombre del mago y el nombre del hechizo que aprende. 
+	Un mago no puede aprender un hechizo que ya tenía aprendido. 
+
+3.Mago lanza hechizo: Se solicitará el nombre del mago y el nombre del personaje al que quiere lanzar un hechizo.
+	Debe controlarse que no puede lanzarse un hechizo a él mismo. Si al lanzar el hechizo el personaje se queda con 
+	menos de cero puntos, el personaje muere por lo que se eliminará. 
+	
+4.Clérigo cura al mago: Se solicitará el nombre del clérigo y el nombre del mago al que quiere curar, y se curará.
+	Un clérigo no puede resucitar a un personaje que ya está muerto 
+	
+5.Mostrar el listado de personajes   
+
+6.Mostrar el listado de personajes ordenados por puntos actuales de mayor a menor   
+
+7.Salir  
+ 
+Existirán un máximo de 100 personajes en el juego 

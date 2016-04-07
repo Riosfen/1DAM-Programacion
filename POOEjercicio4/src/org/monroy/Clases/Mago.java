@@ -80,6 +80,13 @@ public class Mago extends Personaje {
 		return hechizoLanzado;
 	}
 	
+	public String getHechizo(){
+		
+		StringBuilder hechizo = new StringBuilder();
+		
+		return hechizo.toString();
+	}
+	
 	public String toString(){
 		
 		StringBuilder resultado = new StringBuilder();
