@@ -18,6 +18,7 @@ public class Principal {
 		ArrayPersonaje personaje = new ArrayPersonaje();
 
 		int opcion = 0;
+		
 
 		do {
 			try {
