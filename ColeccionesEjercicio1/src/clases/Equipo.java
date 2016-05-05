@@ -6,51 +6,75 @@ import java.util.Iterator;
 public class Equipo {
 
 	private String nombre;
-	private HashSet<Alumno> cAlumno = new HashSet<Alumno>();
+	private HashSet<Alumno> cAlumno;
 
-	public void aniadirAlumno(Alumno alumno) {
-		if (cAlumno.add(alumno)) {
-			System.out.println("Se ha agregado correctamente.");
-		} else {
-			System.out.println("Error! ya se encuentra en el equipo.");
-		}
+	public Equipo(String nombre){
+		setNombre(nombre);
+		cAlumno = new HashSet<Alumno>();
+	}
+	
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void borrarAlumno(String dni) {
-		Iterator<Alumno> itr = cAlumno.iterator();
-
-		while (itr.hasNext()) {
-			if (itr.next().equals(dni))
-				itr.remove();
-		}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public boolean esEquipo(String dni) {
+	
+	public boolean aniadirAlumno(Alumno alumno) {
+		return cAlumno.add(alumno);
+	}
+	
+	public boolean borrarAlumno(Alumno alumno) {
+		return cAlumno.remove(alumno);
+	}
 
-		boolean resultado = false;
-
-		return resultado;
+	public boolean esEquipo(Alumno alumno) {
+		return cAlumno.contains(alumno);
 	}
 
 	public String toString() {
 
-		return "";
-
+		StringBuilder resultado = new StringBuilder("Equipo: " + nombre + "\n");
+		Iterator<Alumno> it = cAlumno.iterator();
+		
+		while (it.hasNext()) {
+			resultado.append(it.next() + "\n");
+		}
+		
+		return resultado.toString();
 	}
 
 	public Equipo unirEquipo(Equipo otro) {
 
-		Equipo resultado;
+		Equipo resultado = new Equipo("Union de " + nombre + " + " + otro.nombre);
+		
+//		for ( Alumno a : cAlumno ){
+//			resultado.cAlumno.add(a);
+//		}
+//		for ( Alumno a : otro.cAlumno ){
+//			resultado.cAlumno.add(a);
+//		}
+		
+		resultado.cAlumno.addAll(cAlumno);
+		resultado.cAlumno.addAll(otro.cAlumno);
 
-		return otro;
+		return resultado;
 
 	}
 
 	public Equipo insertarEquipo(Equipo otro) {
 
-		Equipo resultado;
+		Equipo resultado = new Equipo("Diferencia de " + nombre + " + " + otro.nombre);
+		
+		for ( Alumno a : cAlumno) {
+			if (otro.cAlumno.contains(a)){
+				resultado.cAlumno.add(a);
+			}
+		}
 
-		return otro;
+		return resultado;
 
 	}
 
