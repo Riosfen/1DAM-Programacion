@@ -1,40 +1,54 @@
 package Clases;
 
 import java.util.HashMap;
-import java.util.Iterator;
 
 public class Club {
 
 	private HashMap<String, Socio> cClub;
-	
-	public Club (){
+
+	public Club() {
 		cClub = new HashMap<>();
 	}
-	
-	public void altaSocio(String dni, String nombre, int telefono){
-	
-		Socio nuevoSocio = new Socio(dni, nombre, telefono);
-		
-		cClub.put(dni, nuevoSocio);
-		
+
+	public boolean altaSocio(Socio socioNuevo) {
+
+		boolean resultado = cClub.containsKey(socioNuevo.getDni());
+
+		if (resultado)
+			cClub.put(socioNuevo.getDni(), socioNuevo);
+
+		return !resultado;
 	}
-	
-	public boolean bajaSocio(String dni){
-		
-		cClub.
-		
+
+	public boolean bajaSocio(String dni) {
+
+		boolean resultado = cClub.containsKey(dni);
+
+		if (resultado)
+			cClub.remove(dni);
+
+		return resultado;
 	}
-	
-	public boolean modificarSocio(String dni){
+
+	public boolean modificarSocio(String dni, Socio socioNuevo) {
+
+		boolean resultado = cClub.containsKey(dni);
+
+		if (resultado)
+			cClub.put(dni, socioNuevo);
+
+		return resultado;
+	}
+
+	public String consultarSocio(String dni) {
+
+		boolean socioEncontrado = cClub.containsKey(dni);
+		String resultado = null;
 		
-	}
-	
-	public boolean consultarSocio(String dni){
+		if(socioEncontrado)
+			resultado = cClub.get(dni).toString();
 		
+		return resultado;
 	}
-	
-	public String toString(){
-		return ""
-	}
-	
+
 }
