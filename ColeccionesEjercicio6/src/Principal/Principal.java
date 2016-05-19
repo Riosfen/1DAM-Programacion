@@ -26,7 +26,7 @@ public class Principal {
 			} catch (Exception e) {
 				System.out.println("Error!! intentelo de nuevo");
 			}
-		} while (opcion != 5);
+		} while (opcion != 6);
 			
 	}
 
@@ -66,12 +66,56 @@ public class Principal {
 			break;
 
 		case 5:
+			int opcion2 = 0;
+			do {
+				try {
+					
+					subMenu();
+					opcion2 = Integer.parseInt(teclado.nextLine());
+					tratarSubMenu(opcion2, mClub);
+					
+				} catch (Exception e) {
+					System.out.println("Error!! intentelo de nuevo");
+				}
+			} while (opcion2 != 4);
+			break;
+			
+		case 6:
 			System.out.println("Saliendo...");
 			break;
 		}
 		
 	}
 	
+	private static void subMenu() {
+
+		System.out.println("SUBMENU");
+		System.out.println("1. Nueva actividad.");
+		System.out.println("2. Consultar actividad/es por fecha.");
+		System.out.println("3. Consultar actividad/es por nombre.");
+		System.out.println("4. Volver. <-");
+		
+	}
+
+	private static void tratarSubMenu(int opcion2, Club mClub) {
+
+		switch (opcion2) {
+		case 1:
+			
+			break;
+		case 2:
+			
+			break;
+		case 3:
+			
+			break;
+		case 4:
+			
+			break;
+		}
+		
+	}
+
 	private static String introducirString(String msg){
 		
 		System.out.println("Introducir " + msg + " :");
