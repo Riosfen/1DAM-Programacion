@@ -7,14 +7,14 @@ public class Club {
 	private HashMap<String, Socio> cClub;
 
 	public Club() {
-		cClub = new HashMap<>();
+		cClub = new HashMap<String, Socio>();
 	}
 
 	public boolean altaSocio(Socio socioNuevo) {
 
 		boolean resultado = cClub.containsKey(socioNuevo.getDni());
 
-		if (resultado)
+		if (!resultado)
 			cClub.put(socioNuevo.getDni(), socioNuevo);
 
 		return !resultado;
@@ -43,11 +43,14 @@ public class Club {
 	public String consultarSocio(String dni) {
 
 		boolean socioEncontrado = cClub.containsKey(dni);
-		String resultado = null;
-		
-		if(socioEncontrado)
+		String resultado;
+
+		if (socioEncontrado) {
 			resultado = cClub.get(dni).toString();
-		
+		} else {
+			resultado = "No se ha encontrado el Socio con DNI: " + dni;
+		}
+
 		return resultado;
 	}
 

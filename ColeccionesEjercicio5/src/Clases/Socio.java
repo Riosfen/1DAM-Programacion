@@ -24,7 +24,7 @@ public class Socio {
 		return telefono;
 	}
 	
-	public void setDni(String dni) {
+	private void setDni(String dni) {
 		this.dni = dni;
 	}
 	public void setNombre(String nombre) {
