@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class PizzaPorIngrediente extends Pizza {
 	
-	private enum Ingrediente{ TOMATE,QUESO,POLLO,CHORIZO,JAMON,YORCK,ACEITUNA,SALCHICHAS };
+	enum Ingrediente{ TOMATE,QUESO,POLLO,CHORIZO,JAMON,YORCK,ACEITUNA,SALCHICHAS };
 	
 	private HashSet<Ingrediente> cIngrediente = new HashSet<Ingrediente>();
 	

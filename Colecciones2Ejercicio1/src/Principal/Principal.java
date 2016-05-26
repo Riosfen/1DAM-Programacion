@@ -95,8 +95,8 @@ public class Principal {
 
 		case 2:
 			PizzaPorIngrediente pizzaPorIngrediente = new PizzaPorIngrediente(tamanio);
-			menuIngrediente();
-			//TODO voy por aqui, introducir ingredientes.
+			menuIngrediente(pizza);
+			
 			pizza = pizzaPorIngrediente;
 			break;
 
@@ -111,7 +111,8 @@ public class Principal {
 
 	private static void menuIngrediente() {
 
-		
+		System.out.println("Seleccionar los ingredientes:");
+		System.out.println();
 		
 	}
 
