@@ -1,3 +1,4 @@
+package Clases;
 
 public class Alumno {
 
@@ -27,11 +28,12 @@ public class Alumno {
 		return nombre;
 	}
 	
-	public boolean equals(Alumno otro){
-		
+	public boolean equals(Object otro) {
 		boolean resul = false;
 		
-		if (dni.equals(otro.dni))
+		Alumno alum = (Alumno) otro;
+		
+		if (dni.equals(alum.dni))
 			resul = true;
 		
 		return resul;

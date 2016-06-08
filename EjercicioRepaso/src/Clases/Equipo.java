@@ -1,4 +1,6 @@
+package Clases;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Equipo {
 	
@@ -14,41 +16,38 @@ public class Equipo {
 		return nombreEquipo;
 	}
 	
-	public void aniadirAlumno(Alumno alum){
+	public boolean aniadirAlumno(Alumno alum){
 		
-		for (Alumno alumno : grupo) {
+		boolean resul = false;
+		
+		if (!(grupo.contains(alum)))
+			resul = grupo.add(alum);
 			
-			if (!(alum.equals(alumno))){
-				grupo.add(alum);
-			}
-			
-		}
+		return resul;
 		
 	}
 	
-	public void borrarAlumno(Alumno alum){
+	public boolean borrarAlumno(Alumno alum){
 		
-		for (Alumno alumno : grupo) {
+		boolean resul = false;
+		
+		Iterator<Alumno> itr = grupo.iterator();
+		Alumno alumno;
+		
+		while (itr.hasNext()) {
 			
-			if (alum.equals(alumno)){
-				grupo.remove(alumno);
-			}
+			alumno = itr.next();
 			
+			if (alumno.equals(alum))
+				resul = grupo.remove(alumno);
 		}
 		
+		return resul;
 	}
 	
 	public boolean perteneceEquipo(Alumno alum){
 		
-		boolean resul = false;
-		
-		for (Alumno alumno : grupo) {
-			
-			if (alumno.getNombre().equals(alum.getNombre()))
-				resul = true;
-				
-		}
-		return resul;
+		return grupo.contains(alum);
 		
 	}
 	
@@ -81,23 +80,12 @@ public class Equipo {
 		
 		for (Alumno alumno : grupo) {
 			
-			if (alumno.equals(buscarAlumno(otro)))
+			if (otro.grupo.contains(alumno))
 				equipoResul.grupo.add(alumno);
 		}
 		
 		return equipoResul;
 		
-	}
-	
-	private Alumno buscarAlumno(Equipo otro) {
-
-		Alumno resul;
-		
-		for (Alumno alumno : otro.grupo) {
-			
-		}
-		
-		return null;
 	}
 
 	public boolean equals(Equipo otro){
