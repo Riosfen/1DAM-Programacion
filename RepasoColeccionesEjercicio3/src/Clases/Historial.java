@@ -14,16 +14,14 @@ public class Historial {
 	public boolean aniadirPagina(Pagina pagina){
 		boolean resul = false;
 		
-		try {
-			
-			if (historial.getFirst().compareTo(pagina) < 0){
-				historial.push(pagina);
-				resul = true;
-				}
-			
-		} catch (NoSuchElementException e) {
+		if (historial.isEmpty()){
 			historial.push(pagina);
+			resul = true;
 		}
+		if (historial.getFirst().compareTo(pagina) < 0){
+			historial.push(pagina);
+			resul = true;
+			}
 		
 			
 		return resul;
