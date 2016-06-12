@@ -1,7 +1,6 @@
 package Clases;
 
 import java.util.LinkedList;
-import java.util.NoSuchElementException;
 
 public class Historial {
 
