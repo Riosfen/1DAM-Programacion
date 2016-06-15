@@ -48,16 +48,37 @@ public class Agenda {
 		return resul;
 	}
 
-	public void eliminarCumple(Amigo otro) {
+	public void eliminarCumple(Amigo otro) throws AmigoException {
 
-		if (cAmigo.contains(otro)) {
-			cAmigo.remove(cAmigo.indexOf(otro));
-		}
+		if (cAmigo.remove(otro) == false)
+			throw new AmigoException("Error, ese amigo no se encuentra en la lista");
 
 	}
 
-	public void cambiarCumpleaño(String nombre) {
+	public boolean buscarAmigo(Amigo otro) {
 
+		boolean encontrado = false;
+		if (cAmigo.contains(otro))
+			encontrado = true;
+		
+		return encontrado;
+	}
+	
+	public void cambiarFecha(Amigo otro) throws AmigoException{
+		
+		eliminarCumple(otro);
+		
+		aniadirAmigo(otro);
+	}
+	
+	public String toString (){
+		StringBuilder resul = new StringBuilder();
+		
+		for (Amigo amigo : cAmigo) {
+			resul.append(amigo + "\n");
+		}
+		
+		return resul.toString();
 	}
 
 }

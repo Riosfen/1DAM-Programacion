@@ -11,6 +11,10 @@ public class Amigo {
 		this.fecha = fecha;
 		setHoraAviso(horaAviso);
 	}
+	
+	public Amigo(String nombre){
+		this.nombre = nombre;
+	}
 
 	public Fecha getFecha() {
 		return fecha;
@@ -49,13 +53,8 @@ public class Amigo {
 		return resul;
 	}
 	
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
+	public String toString(){
+		return "Nombre: " + getNombre() + ", Cumpleaños: " + getFecha() + ", Aviso: " + getHoraAviso();
 	}
 
 	@Override
